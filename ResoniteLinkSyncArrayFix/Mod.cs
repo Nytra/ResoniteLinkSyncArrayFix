@@ -63,7 +63,7 @@ public class ResoniteLinkSyncArrayFix : ResoniteMod
 				yield return AccessTools.Method(typeof(SyncArray<>).MakeGenericType(type), nameof(SyncArray<>.SetFrom), [typeof(IEnumerable<>).MakeGenericType(type)]);
 			}
 		}
-		static MethodInfo _method = AccessTools.Method(typeof(ResoniteLinkSyncArrayFixPatch), "Thing");
+		static MethodInfo _method = AccessTools.Method(typeof(ResoniteLinkSyncArrayFixPatch), nameof(SetFrom));
 		static bool Prefix(object __instance, object values)
 		{
 			if (!config!.GetValue(Key_Enabled)) return true;
@@ -81,7 +81,7 @@ public class ResoniteLinkSyncArrayFix : ResoniteMod
 
 			return false;
 		}
-		static void Thing<T>(SyncArray<T> array, IEnumerable<T> values) where T : IEquatable<T>
+		static void SetFrom<T>(SyncArray<T> array, IEnumerable<T> values) where T : IEquatable<T>
 		{
 			int index = 0;
 			foreach (T v in values)
