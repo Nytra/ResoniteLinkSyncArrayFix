@@ -59,7 +59,6 @@ public class ResoniteLinkSyncArrayFix : ResoniteMod
 		{
 			foreach (var type in Coder.BaseEnginePrimitives.Where(t => t != typeof(dummy) && t != typeof(dummy<>)))
 			{
-				Msg($"{type}");
 				yield return AccessTools.Method(typeof(SyncArray<>).MakeGenericType(type), nameof(SyncArray<>.SetFrom), [typeof(IEnumerable<>).MakeGenericType(type)]);
 			}
 		}
