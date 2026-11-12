@@ -17,7 +17,7 @@ public class ResoniteLinkSyncArrayFix : ResoniteMod
 	public override string Name => "ResoniteLink SyncArray Fix";
 	public override string Author => "Nytra";
 	public override string Version => "1.0.0";
-	public override string Link => "https://github.com/Nytra/ResoniteResoniteLinkSyncArrayFix";
+	public override string Link => "https://github.com/Nytra/ResoniteLinkSyncArrayFix";
 
 	private static Harmony harmony = new Harmony("owo.Nytra.ResoniteLinkSyncArrayFix");
 
